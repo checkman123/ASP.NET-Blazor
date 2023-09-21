@@ -12,6 +12,14 @@ namespace BethanysPieShopHRM.APP.Components
         [Inject]
         public NavigationManager NavigationManager { get; set; } = default!;
 
+        protected override void OnInitialized()
+        {
+            if (string.IsNullOrEmpty(Employee.LastName))
+            {
+                throw new Exception("Last name cant be empty");
+            }
+        }
+
         public void NavigateToDetails(Employee selectedEmployee)
         {
             // can add more code like auth check
