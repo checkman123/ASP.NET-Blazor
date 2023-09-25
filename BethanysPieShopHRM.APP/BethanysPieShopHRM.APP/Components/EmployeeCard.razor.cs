@@ -25,5 +25,10 @@ namespace BethanysPieShopHRM.APP.Components
             // can add more code like auth check
             NavigationManager.NavigateTo($"employeedetail/{selectedEmployee.EmployeeId}");
         }
+        public void NavigateToEdit(Employee selectedEmployee)
+        {
+            // can add more code like auth check
+            NavigationManager.NavigateTo($"employeeedit/{selectedEmployee.EmployeeId}");
+        }
     }
 }
