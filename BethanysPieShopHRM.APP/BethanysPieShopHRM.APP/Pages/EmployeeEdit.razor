@@ -11,7 +11,7 @@
                   OnInvalidSubmit="@HandleInvalidSubmit">
             @*Referring to the instance of an Employee not the class*@
             
-
+            @*Validate with Data Annotation and show validation error*@
             <DataAnnotationsValidator />
             <ValidationSummary></ValidationSummary>
 
@@ -30,6 +30,7 @@
                 <div class="col-md-8">
                     <InputText id="lastName" class="form-control col-md-8" @bind-Value="@Employee.LastName" placeholder="Enter last name"></InputText>
                 </div>
+                @*Show validation message right in the input text*@
                 <ValidationMessage class="offset-md-3 col-md-8" For="@(() => Employee.LastName)" />
             </div>
 
