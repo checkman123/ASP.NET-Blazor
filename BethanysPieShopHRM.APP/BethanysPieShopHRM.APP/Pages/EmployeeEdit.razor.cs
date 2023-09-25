@@ -2,6 +2,7 @@
 using BethanysPieShopHRM.APP.Services;
 using BethanysPieShopHRM.Shared.Domain;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
 
 namespace BethanysPieShopHRM.APP.Pages
 {
@@ -24,6 +25,14 @@ namespace BethanysPieShopHRM.APP.Pages
         protected string Message = string.Empty;
         protected string StatusClass = string.Empty;
         protected bool Saved;
+
+        private IBrowserFile selectedFile;
+
+        private void OnInputFileChange(InputFileChangeEventArgs e)
+        {
+            selectedFile = e.File;
+            StateHasChanged();
+        }
 
         protected override async Task OnInitializedAsync()
         {
@@ -50,8 +59,21 @@ namespace BethanysPieShopHRM.APP.Pages
         {
             Saved = false;
 
-            if (Employee.EmployeeId == 0) //new
+            if (Employee.EmployeeId == 0) //new employee
             {
+                //adding image
+                if (selectedFile != null)//take first image
+                {
+                    var file = selectedFile;
+                    Stream stream = file.OpenReadStream();
+                    MemoryStream ms = new();
+                    await stream.CopyToAsync(ms);
+                    stream.Close();
+
+                    Employee.ImageName = file.Name;
+                    Employee.ImageContent = ms.ToArray();
+                }
+
                 var addedEmployee = await EmployeeDataService.AddEmployee(Employee);
                 if (addedEmployee != null)
                 {
