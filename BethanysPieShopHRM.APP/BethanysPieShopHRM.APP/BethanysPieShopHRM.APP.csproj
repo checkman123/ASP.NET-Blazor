@@ -17,14 +17,14 @@
 	<ItemGroup>
 		<Folder Include="Models\" />
 	</ItemGroup>
-
-	<ItemGroup>
-		<ProjectReference Include="..\BethanysPieShopHRM.ComponentsLibrary\BethanysPieShopHRM.ComponentsLibrary.csproj" />
-		<ProjectReference Include="..\BethanysPieShopHRM.Shared\BethanysPieShopHRM.Shared.csproj" />
-	</ItemGroup>
 	
 	<ItemGroup>
 		<BlazorWebAssemblyLazyLoad Include="BethanysPieShopHRM.ComponentsLibrary.dll" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <ProjectReference Include="..\BethanysPieShopHRM.ComponentsLibrary\BethanysPieShopHRM.ComponentsLibrary.csproj" />
+	  <ProjectReference Include="..\BethanysPieShopHRM.Shared\BethanysPieShopHRM.Shared.csproj" />
 	</ItemGroup>
 
 </Project>
