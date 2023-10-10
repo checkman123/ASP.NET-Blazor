@@ -1,4 +1,4 @@
-﻿using BethanysPieShopHRM.App.Models;
+﻿using BethanysPieShopHRM.APP.Models;
 
 namespace BethanysPieShopHRM.APP.Components.Widgets
 {

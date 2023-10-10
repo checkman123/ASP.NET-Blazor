@@ -1,6 +1,6 @@
 ﻿using BethanysPieShopHRM.Shared.Domain;
 
-namespace BethanysPieShopHRM.App.Services
+namespace BethanysPieShopHRM.APP.Services
 {
     public interface ICountryDataService
     {

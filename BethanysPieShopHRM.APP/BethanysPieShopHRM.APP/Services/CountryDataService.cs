@@ -1,7 +1,7 @@
 ﻿using BethanysPieShopHRM.Shared.Domain;
 using System.Text.Json;
 
-namespace BethanysPieShopHRM.App.Services
+namespace BethanysPieShopHRM.APP.Services
 {
     public class CountryDataService : ICountryDataService
     {

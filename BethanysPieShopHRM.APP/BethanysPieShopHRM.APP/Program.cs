@@ -3,7 +3,7 @@ using BethanysPieShopHRM.APP;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Blazored.LocalStorage;
-using BethanysPieShopHRM.App.Services;
+using BethanysPieShopHRM.APP.Services;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
