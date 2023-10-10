@@ -1,0 +1,22 @@
+﻿@inherits TestContext
+@using BethanysPieShopHRM.APP.Components
+
+@code {
+    
+    [Fact]
+    public void RenderSampleComponentWithValueGreaterThanZero()
+    {
+        //cut = component under test
+        var cut = Render(@<SampleComponent MessageCount="3" />);
+
+        cut.MarkupMatches("<h3>Inbox</h3><h4>You currently have 3 questions from employees!</h4>"); 
+    }
+
+    [Fact]
+    public void RenderSampleComponentWithZero()
+    {
+        var cut = Render(@<SampleComponent MessageCount="0" />);
+
+        cut.MarkupMatches("<h3>Inbox</h3><h4>No questions from employees! All good!</h4>"); 
+    }
+}

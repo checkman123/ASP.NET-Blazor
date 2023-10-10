@@ -1,0 +1,24 @@
+﻿@using BethanysPieShopHRM.APP.Components.Widgets
+@using BethanysPieShopHRM.APP
+
+@inherits TestContext
+
+@code {
+
+    public InboxWidgetTests()
+    {
+        this.Services.AddScoped<ApplicationState>();
+    }
+
+    [Fact]
+    public void RenderInboxWidgetWithValueGreaterThanZero()
+    {
+
+        var applicationState = this.Services.GetService<ApplicationState>();
+        applicationState.NumberOfMessages = 5;
+
+        var cut = Render(@<InboxWidget />);
+        cut.MarkupMatches("<h3>Inbox</h3><h4>You currently have 5 questions from employees!</h4><br /><br />");
+    }
+
+}
